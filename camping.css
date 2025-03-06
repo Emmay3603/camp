@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --header-height: 3.5rem;
+
+  /*=============  colors ================*/
+  --first-color : rgb(0, 115, 153);
+  --gradient-color: linear-gradient( 90deg, rgb(23, 51, 79),rgb(24, 87, 103));
+  --title-color: hsl(210, 52%, 20%);
+  --text-color: hsl(210, 24%, 15%);
+  --white-color: #ffffff;
+  --body-color: hsl(210, 55%, 85%);
+
+  /* ===========   Fonts and typography  =============*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Lora", serif;
+   
+}
+
+/* ================  Base  =============== */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+body{
+  overflow: hidden;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-weight: 500;
+  position: relative;
+}
+header {
+  position: fixed;
+  width: 100%;
+}
+.nav-container {
+  background-color: var(--body-color);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-menu {
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+}
+.nav-logo {
+  width: 36px;
+}
+.nav-container a {
+  text-decoration: none;
+  color: var(--title-color);
+  transition: .3s;
+}
+.nav-container a:hover{
+  color: var(--first-color);
+}
+.menu-btn, .close-btn, .nav-logo {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.home {
+  position: relative;
+  z-index: -1;
+}
+.home-content {
+  padding: 120px 50px;
+}
+.home-subtitle{
+  color: var(--first-color);
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+.home-title{
+  font-family: var(--second-font);
+  font-size: 20px;
+  margin: 20px auto;
+}
+.home-button{
+  background: var(--gradient-color);
+  width: max-content;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 12px 34px rgba(1, 8, 68, 0.397);
+}
+.home-images img{
+  position: absolute
+}
+.birds-img {
+  position: absolute;
+}
+
+/* =============== Navigation For mobile devices (max-width: 560px) =============== */
+@media screen and (max-width: 560px){
+  .home-subtitle{
+    font-size: 12px;
+  }
+  .home-title{
+    font-size: 17px;
+    margin: 17px auto;
+  }
+  .home-content {
+    padding: 120px 20px;
+  }
+  .bird-2 {
+    position: absolute;
+    left: 280px;
+    bottom: 250px
+  }
+  .bird-1 {
+    position: absolute;
+    left: 25px;
+    bottom: 40px;
+    transform: rotate(-20deg);
+  }
+  .home-images img{
+
+    position: absolute;
+    max-width: initial;
+    width: 600px;
+    top:280px ;
+  }
+  .nav-menu {
+    position: absolute;
+    top: -400px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--body-color);
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    gap: 30px;
+    transition: .4s;
+    box-shadow: 0px 1px 32px rgba(23, 51, 79, 0.295) ;
+    
+  }
+  .nav-menu ul {
+    color: var(--title-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav-btns a{
+    display: block;
+    margin: 10px;
+  }
+  .nav-btns .get-started {
+    background-color: #ffffff9a;
+    padding: 10px;
+    width: 100px;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid var(--title-color);
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 0;
+    right:  0;
+    font-size: 20px;
+  }
+
+  /* ============ Display the Menubar =============== */
+  .menu-display {
+    top: 0;
+  }
+
+}
+
+/* =============== Navigation For large devices (min-width: 560px) =============== */
+@media screen and (min-width: 560px) {
+  body{
+    overflow: auto;
+  }
+  .nav-container {
+    padding: 20px 30px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 30px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-btns .get-started {
+    text-align: center;
+    background-color: #ffffff00;
+    padding: 5px;
+    width: 100px;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid var(--title-color);
+  }
+  .menu-btn, .close-btn {
+    display: none;
+  }
+  #nav-logo{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  .nav-menu {
+    display: flex;
+    gap: 30px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* =============== Navigation For large devices (min-width: 560px) =============== */
+@media screen and (min-width: 660px) {
+  .nav-container {
+    padding: 20px 30px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 70px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+}
+
+@media screen and (min-width: 700px) {
+  .nav-container {
+    padding: 20px 30px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 100px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav-container {
+    padding: 20px 50px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 120px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .nav-btns .get-started {
+    text-align: center;
+    background-color: #ffffff00;
+    padding: 10px;
+    width: 100px;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid var(--title-color);
+  }
+
+}
+@media screen and (min-width: 900px) {
+  .nav-container {
+    padding: 20px 80px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 150px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+}
+@media screen and (min-width: 1000px) {
+  .nav-container {
+    padding: 20px 100px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 180px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+}
+@media screen and (min-width: 1100px) {
+  .nav-container {
+    padding: 20px 120px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 200px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .home-content {
+    padding: 120px 135px;
+  }
+  .nav-container {
+    padding: 20px 120px;
+  }
+  .nav-menu {
+    display: flex; 
+    gap: 400px;
+  }
+  .nav-menu ul {
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+  }
+  .home-images img{
+    position: absolute;
+    top: 10px;
+  }
+
+}
